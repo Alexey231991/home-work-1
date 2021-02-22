@@ -1,7 +1,7 @@
 // Первое задание
 
 const username = prompt('Введите имя?');
-const year = prompt('Какого ты года рождения?');
+const year = Number(prompt('Какого ты года рождения?'));
 const age = 2021 - year;
 alert(username + ' ' +  age);
 
@@ -42,6 +42,10 @@ alert('Cреднее арифметическое - ' + (sum / 3).toFixed(3));
 
 // Третье задание
 
-const fifeNum = prompt('Введите пятизначное число');
-
-alert(fifeNum[0] + ' ' + fifeNum[1] + ' ' + fifeNum[2] + ' ' + fifeNum[3] + ' ' +fifeNum[4]);
+const fifeNum = Number(prompt('Введите пятизначное число')); // 54321
+const first = Math.floor( fifeNum / 10000 );
+const second = Math.floor( fifeNum / 1000 ) - first * 10;
+const third = Math.floor( fifeNum / 100 ) - first * 100 - second * 10;
+const fourth = Math.floor( fifeNum / 10 ) - first * 1000 - second * 100 - third * 10;
+const fifth = fifeNum - first * 10000 - second * 1000 - third * 100 - fourth * 10;
+alert( first + ' ' + second + ' ' + third + ' ' + fourth + ' ' + fifth);
